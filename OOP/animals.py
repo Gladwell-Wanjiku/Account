@@ -25,6 +25,24 @@ class Human(Animal):
      def move(self):
           print("walk")
      def make_sound(self):
-          print("Talk")     
+          print("Talk") 
+
+          
+def calculate_total_score(student_data):
+    for student in student_data:
+        total_score = sum(student['scores'])
+        student['total_score'] = total_score
+    return student_data
+
+
+student_data = [
+    { 'name': 'John', 'scores': [90, 80, 85] },
+    { 'name': 'Jane', 'scores': [95, 92, 88] },
+    { 'name': 'Jim', 'scores': [70, 80, 75] },
+    { 'name': 'Jill', 'scores': [85, 90, 84] }
+]
+result = calculate_total_score(student_data)
+for student in result:
+    print(f"{student['name']}'s total score is {student['total_score']}")    
                                          
 
